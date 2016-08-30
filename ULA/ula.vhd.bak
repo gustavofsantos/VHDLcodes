@@ -1,0 +1,26 @@
+-- Autor: Gustavo Santos
+-- Email: gfdsantos at inf ufpel edu br
+
+library ieee
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+-- definição da entidade
+-- 	a ula funcionará como um processador de instruções
+--		
+entity ula is
+	port(
+		clock:  in  std_logic;
+		opcode: in  integer;
+		rs:     in  integer;
+		rt:     in  integer; 
+		rd:     out integer;
+		shamt:  in  integer; 
+		func:   in  integer
+	);
+end ula;
+
+architecture arquitetura of ula is
+begin
+	
+end arquitetura

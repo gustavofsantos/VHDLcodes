@@ -1,0 +1,545 @@
+Analysis & Synthesis report for ula
+Tue Aug 30 20:28:22 2016
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis DSP Block Usage Summary
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0
+ 13. lpm_mult Parameter Settings by Entity Instance
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue Aug 30 20:28:22 2016           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; ula                                             ;
+; Top-level Entity Name              ; ula                                             ;
+; Family                             ; Cyclone II                                      ;
+; Total logic elements               ; 1,993                                           ;
+;     Total combinational functions  ; 937                                             ;
+;     Dedicated logic registers      ; 1,120                                           ;
+; Total registers                    ; 1120                                            ;
+; Total pins                         ; 257                                             ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 6                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Top-level entity name                                                      ; ula                ; ula                ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                          ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                      ; Library ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------+---------+
+; ula.vhd                          ; yes             ; User VHDL File               ; C:/Users/Gustavo/Documents/github/VHDLcodes/ULA/ula.vhd           ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_mult.tdf    ;         ;
+; aglobal130.inc                   ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc  ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_add_sub.inc ;         ;
+; multcore.inc                     ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/multcore.inc    ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/bypassff.inc    ;         ;
+; altshift.inc                     ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altshift.inc    ;         ;
+; db/mult_i1t.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/Gustavo/Documents/github/VHDLcodes/ULA/db/mult_i1t.tdf   ;         ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 1,993 ;
+;                                             ;       ;
+; Total combinational functions               ; 937   ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 742   ;
+;     -- 3 input functions                    ; 154   ;
+;     -- <=2 input functions                  ; 41    ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 849   ;
+;     -- arithmetic mode                      ; 88    ;
+;                                             ;       ;
+; Total registers                             ; 1120  ;
+;     -- Dedicated logic registers            ; 1120  ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 257   ;
+; Embedded Multiplier 9-bit elements          ; 6     ;
+; Maximum fan-out node                        ; clock ;
+; Maximum fan-out                             ; 1120  ;
+; Total fan-out                               ; 7034  ;
+; Average fan-out                             ; 3.03  ;
++---------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
++---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------+--------------+
+; Compilation Hierarchy Node      ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                         ; Library Name ;
++---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------+--------------+
+; |ula                            ; 937 (909)         ; 1120 (1120)  ; 0           ; 6            ; 0       ; 3         ; 257  ; 0            ; |ula                                        ; work         ;
+;    |lpm_mult:Mult0|             ; 28 (0)            ; 0 (0)        ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |ula|lpm_mult:Mult0                         ; work         ;
+;       |mult_i1t:auto_generated| ; 28 (28)           ; 0 (0)        ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |ula|lpm_mult:Mult0|mult_i1t:auto_generated ; work         ;
++---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary        ;
++---------------------------------------+-------------+
+; Statistic                             ; Number Used ;
++---------------------------------------+-------------+
+; Simple Multipliers (9-bit)            ; 0           ;
+; Simple Multipliers (18-bit)           ; 3           ;
+; Embedded Multiplier Blocks            ; --          ;
+; Embedded Multiplier 9-bit elements    ; 6           ;
+; Signed Embedded Multipliers           ; 0           ;
+; Unsigned Embedded Multipliers         ; 1           ;
+; Mixed Sign Embedded Multipliers       ; 2           ;
+; Variable Sign Embedded Multipliers    ; 0           ;
+; Dedicated Input Shift Register Chains ; 0           ;
++---------------------------------------+-------------+
+Note: number of Embedded Multiplier Blocks used is only available after a successful fit.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 1120  ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 30    ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 1054  ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; res[0]~reg0                             ; 1       ;
+; res[31]~reg0                            ; 1       ;
+; saida[0]~reg0                           ; 1       ;
+; saida[31]~reg0                          ; 1       ;
+; bdr[22][0]                              ; 1       ;
+; bdr[26][0]                              ; 1       ;
+; bdr[18][0]                              ; 1       ;
+; bdr[30][0]                              ; 1       ;
+; bdr[25][0]                              ; 1       ;
+; bdr[21][0]                              ; 1       ;
+; bdr[17][0]                              ; 1       ;
+; bdr[29][0]                              ; 1       ;
+; bdr[20][0]                              ; 1       ;
+; bdr[24][0]                              ; 1       ;
+; bdr[16][0]                              ; 1       ;
+; bdr[28][0]                              ; 1       ;
+; bdr[27][0]                              ; 1       ;
+; bdr[23][0]                              ; 1       ;
+; bdr[19][0]                              ; 1       ;
+; bdr[31][0]                              ; 1       ;
+; bdr[10][0]                              ; 1       ;
+; bdr[9][0]                               ; 1       ;
+; bdr[8][0]                               ; 1       ;
+; bdr[11][0]                              ; 1       ;
+; bdr[5][0]                               ; 1       ;
+; bdr[6][0]                               ; 1       ;
+; bdr[4][0]                               ; 1       ;
+; bdr[7][0]                               ; 1       ;
+; bdr[2][0]                               ; 1       ;
+; bdr[1][0]                               ; 1       ;
+; bdr[0][0]                               ; 1       ;
+; bdr[3][0]                               ; 1       ;
+; bdr[13][0]                              ; 1       ;
+; bdr[14][0]                              ; 1       ;
+; bdr[12][0]                              ; 1       ;
+; bdr[15][0]                              ; 1       ;
+; bdr[21][31]                             ; 1       ;
+; bdr[25][31]                             ; 1       ;
+; bdr[17][31]                             ; 1       ;
+; bdr[29][31]                             ; 1       ;
+; bdr[26][31]                             ; 1       ;
+; bdr[22][31]                             ; 1       ;
+; bdr[18][31]                             ; 1       ;
+; bdr[30][31]                             ; 1       ;
+; bdr[24][31]                             ; 1       ;
+; bdr[20][31]                             ; 1       ;
+; bdr[16][31]                             ; 1       ;
+; bdr[28][31]                             ; 1       ;
+; bdr[23][31]                             ; 1       ;
+; bdr[27][31]                             ; 1       ;
+; bdr[19][31]                             ; 1       ;
+; bdr[31][31]                             ; 1       ;
+; bdr[6][31]                              ; 1       ;
+; bdr[5][31]                              ; 1       ;
+; bdr[4][31]                              ; 1       ;
+; bdr[7][31]                              ; 1       ;
+; bdr[9][31]                              ; 1       ;
+; bdr[10][31]                             ; 1       ;
+; bdr[8][31]                              ; 1       ;
+; bdr[11][31]                             ; 1       ;
+; bdr[1][31]                              ; 1       ;
+; bdr[2][31]                              ; 1       ;
+; bdr[0][31]                              ; 1       ;
+; bdr[3][31]                              ; 1       ;
+; bdr[14][31]                             ; 1       ;
+; bdr[13][31]                             ; 1       ;
+; bdr[12][31]                             ; 1       ;
+; bdr[15][31]                             ; 1       ;
+; resultado[0]                            ; 34      ;
+; resultado[31]                           ; 34      ;
+; Total number of inverted registers = 70 ;         ;
++-----------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 32:1               ; 30 bits   ; 630 LEs       ; 630 LEs              ; 0 LEs                  ; Yes        ; |ula|res[8]~reg0           ;
+; 7:1                ; 30 bits   ; 120 LEs       ; 120 LEs              ; 0 LEs                  ; Yes        ; |ula|resultado[29]         ;
+; 32:1               ; 2 bits    ; 42 LEs        ; 42 LEs               ; 0 LEs                  ; Yes        ; |ula|res[0]~reg0           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0                   ;
++------------------------------------------------+------------+---------------------+
+; Parameter Name                                 ; Value      ; Type                ;
++------------------------------------------------+------------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON         ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF        ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON         ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF        ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 32         ; Untyped             ;
+; LPM_WIDTHB                                     ; 32         ; Untyped             ;
+; LPM_WIDTHP                                     ; 64         ; Untyped             ;
+; LPM_WIDTHR                                     ; 64         ; Untyped             ;
+; LPM_WIDTHS                                     ; 1          ; Untyped             ;
+; LPM_REPRESENTATION                             ; SIGNED     ; Untyped             ;
+; LPM_PIPELINE                                   ; 0          ; Untyped             ;
+; LATENCY                                        ; 0          ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; NO         ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; NO         ; Untyped             ;
+; USE_EAB                                        ; OFF        ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 5          ; Untyped             ;
+; DEVICE_FAMILY                                  ; Cyclone II ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL     ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT        ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO       ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0          ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0          ; Untyped             ;
+; CBXI_PARAMETER                                 ; mult_i1t   ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx         ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx         ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF        ; Untyped             ;
++------------------------------------------------+------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance         ;
++---------------------------------------+----------------+
+; Name                                  ; Value          ;
++---------------------------------------+----------------+
+; Number of entity instances            ; 1              ;
+; Entity Instance                       ; lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 32             ;
+;     -- LPM_WIDTHB                     ; 32             ;
+;     -- LPM_WIDTHP                     ; 64             ;
+;     -- LPM_REPRESENTATION             ; SIGNED         ;
+;     -- INPUT_A_IS_CONSTANT            ; NO             ;
+;     -- INPUT_B_IS_CONSTANT            ; NO             ;
+;     -- USE_EAB                        ; OFF            ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO           ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx             ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx             ;
++---------------------------------------+----------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Tue Aug 30 20:28:18 2016
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ula -c ula
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file ula.vhd
+    Info (12022): Found design unit 1: ula-arquitetura
+    Info (12023): Found entity 1: ula
+Info (12127): Elaborating entity "ula" for the top level hierarchy
+Info (278001): Inferred 1 megafunctions from design logic
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult0"
+Info (12130): Elaborated megafunction instantiation "lpm_mult:Mult0"
+Info (12133): Instantiated megafunction "lpm_mult:Mult0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHA" = "32"
+    Info (12134): Parameter "LPM_WIDTHB" = "32"
+    Info (12134): Parameter "LPM_WIDTHP" = "64"
+    Info (12134): Parameter "LPM_WIDTHR" = "64"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_i1t.tdf
+    Info (12023): Found entity 1: mult_i1t
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following DSP element node(s):
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_i1t:auto_generated|mac_mult7"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_i1t:auto_generated|mac_out8"
+Info (13014): Ignored 84 buffer(s)
+    Info (13019): Ignored 84 SOFT buffer(s)
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 91 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "opcode[0]"
+    Warning (15610): No output dependent on input pin "opcode[1]"
+    Warning (15610): No output dependent on input pin "opcode[2]"
+    Warning (15610): No output dependent on input pin "opcode[3]"
+    Warning (15610): No output dependent on input pin "opcode[4]"
+    Warning (15610): No output dependent on input pin "opcode[5]"
+    Warning (15610): No output dependent on input pin "opcode[6]"
+    Warning (15610): No output dependent on input pin "opcode[7]"
+    Warning (15610): No output dependent on input pin "opcode[8]"
+    Warning (15610): No output dependent on input pin "opcode[9]"
+    Warning (15610): No output dependent on input pin "opcode[10]"
+    Warning (15610): No output dependent on input pin "opcode[11]"
+    Warning (15610): No output dependent on input pin "opcode[12]"
+    Warning (15610): No output dependent on input pin "opcode[13]"
+    Warning (15610): No output dependent on input pin "opcode[14]"
+    Warning (15610): No output dependent on input pin "opcode[15]"
+    Warning (15610): No output dependent on input pin "opcode[16]"
+    Warning (15610): No output dependent on input pin "opcode[17]"
+    Warning (15610): No output dependent on input pin "opcode[18]"
+    Warning (15610): No output dependent on input pin "opcode[19]"
+    Warning (15610): No output dependent on input pin "opcode[20]"
+    Warning (15610): No output dependent on input pin "opcode[21]"
+    Warning (15610): No output dependent on input pin "opcode[22]"
+    Warning (15610): No output dependent on input pin "opcode[23]"
+    Warning (15610): No output dependent on input pin "opcode[24]"
+    Warning (15610): No output dependent on input pin "opcode[25]"
+    Warning (15610): No output dependent on input pin "opcode[26]"
+    Warning (15610): No output dependent on input pin "opcode[27]"
+    Warning (15610): No output dependent on input pin "opcode[28]"
+    Warning (15610): No output dependent on input pin "opcode[29]"
+    Warning (15610): No output dependent on input pin "opcode[30]"
+    Warning (15610): No output dependent on input pin "opcode[31]"
+    Warning (15610): No output dependent on input pin "rd[5]"
+    Warning (15610): No output dependent on input pin "rd[6]"
+    Warning (15610): No output dependent on input pin "rd[7]"
+    Warning (15610): No output dependent on input pin "rd[8]"
+    Warning (15610): No output dependent on input pin "rd[9]"
+    Warning (15610): No output dependent on input pin "rd[10]"
+    Warning (15610): No output dependent on input pin "rd[11]"
+    Warning (15610): No output dependent on input pin "rd[12]"
+    Warning (15610): No output dependent on input pin "rd[13]"
+    Warning (15610): No output dependent on input pin "rd[14]"
+    Warning (15610): No output dependent on input pin "rd[15]"
+    Warning (15610): No output dependent on input pin "rd[16]"
+    Warning (15610): No output dependent on input pin "rd[17]"
+    Warning (15610): No output dependent on input pin "rd[18]"
+    Warning (15610): No output dependent on input pin "rd[19]"
+    Warning (15610): No output dependent on input pin "rd[20]"
+    Warning (15610): No output dependent on input pin "rd[21]"
+    Warning (15610): No output dependent on input pin "rd[22]"
+    Warning (15610): No output dependent on input pin "rd[23]"
+    Warning (15610): No output dependent on input pin "rd[24]"
+    Warning (15610): No output dependent on input pin "rd[25]"
+    Warning (15610): No output dependent on input pin "rd[26]"
+    Warning (15610): No output dependent on input pin "rd[27]"
+    Warning (15610): No output dependent on input pin "rd[28]"
+    Warning (15610): No output dependent on input pin "rd[29]"
+    Warning (15610): No output dependent on input pin "rd[30]"
+    Warning (15610): No output dependent on input pin "rd[31]"
+    Warning (15610): No output dependent on input pin "shamt[0]"
+    Warning (15610): No output dependent on input pin "shamt[1]"
+    Warning (15610): No output dependent on input pin "shamt[2]"
+    Warning (15610): No output dependent on input pin "shamt[3]"
+    Warning (15610): No output dependent on input pin "shamt[4]"
+    Warning (15610): No output dependent on input pin "shamt[5]"
+    Warning (15610): No output dependent on input pin "shamt[6]"
+    Warning (15610): No output dependent on input pin "shamt[7]"
+    Warning (15610): No output dependent on input pin "shamt[8]"
+    Warning (15610): No output dependent on input pin "shamt[9]"
+    Warning (15610): No output dependent on input pin "shamt[10]"
+    Warning (15610): No output dependent on input pin "shamt[11]"
+    Warning (15610): No output dependent on input pin "shamt[12]"
+    Warning (15610): No output dependent on input pin "shamt[13]"
+    Warning (15610): No output dependent on input pin "shamt[14]"
+    Warning (15610): No output dependent on input pin "shamt[15]"
+    Warning (15610): No output dependent on input pin "shamt[16]"
+    Warning (15610): No output dependent on input pin "shamt[17]"
+    Warning (15610): No output dependent on input pin "shamt[18]"
+    Warning (15610): No output dependent on input pin "shamt[19]"
+    Warning (15610): No output dependent on input pin "shamt[20]"
+    Warning (15610): No output dependent on input pin "shamt[21]"
+    Warning (15610): No output dependent on input pin "shamt[22]"
+    Warning (15610): No output dependent on input pin "shamt[23]"
+    Warning (15610): No output dependent on input pin "shamt[24]"
+    Warning (15610): No output dependent on input pin "shamt[25]"
+    Warning (15610): No output dependent on input pin "shamt[26]"
+    Warning (15610): No output dependent on input pin "shamt[27]"
+    Warning (15610): No output dependent on input pin "shamt[28]"
+    Warning (15610): No output dependent on input pin "shamt[29]"
+    Warning (15610): No output dependent on input pin "shamt[30]"
+    Warning (15610): No output dependent on input pin "shamt[31]"
+Info (21057): Implemented 2256 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 193 input pins
+    Info (21059): Implemented 64 output pins
+    Info (21061): Implemented 1993 logic cells
+    Info (21062): Implemented 6 DSP elements
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 97 warnings
+    Info: Peak virtual memory: 508 megabytes
+    Info: Processing ended: Tue Aug 30 20:28:22 2016
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:04
+
+
